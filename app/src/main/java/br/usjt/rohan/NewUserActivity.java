@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -24,7 +25,14 @@ public class NewUserActivity extends AppCompatActivity {
         auth = FirebaseAuth.getInstance();
     }
 
-    public void newUser (View view){
+    public void newUserSignUp (View view){
+        String email = editTextNewUserEmail.getEditableText().toString();
+        String senha = editTextNewUserPass.getEditableText().toString();
+
+        auth.createUserWithEmailAndPassword(email, senha).addOnSuccessListener((result)->{
+            Toast.makeText(this, result.getUser().getEmail(), Toast.LENGTH_SHORT).show();
+            finish();
+        }).addOnFailureListener((error-> error.printStackTrace()));
 
     }
 }

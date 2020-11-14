@@ -14,7 +14,7 @@ import com.google.firebase.auth.FirebaseAuth;
 public class MainActivity extends AppCompatActivity {
 
     private EditText editTextEmail;
-    private EditText editTextSenha;
+    private EditText editTextPass;
     private FirebaseAuth auth;
 
     public static void info(String s){
@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         editTextEmail = findViewById(R.id.editTextEmail);
-        editTextSenha = findViewById(R.id.editTextSenha);
+        editTextPass = findViewById(R.id.editTextSenha);
         auth = FirebaseAuth.getInstance();
     }
 
@@ -35,12 +35,13 @@ public class MainActivity extends AppCompatActivity {
 
     public void login (View v){
         String email = editTextEmail.getEditableText().toString();
-        String senha = editTextSenha.getEditableText().toString();
+        String senha = editTextPass.getEditableText().toString();
         auth.signInWithEmailAndPassword(email, senha).addOnSuccessListener((result)->{
             Toast.makeText(this, "Sucesso!", Toast.LENGTH_SHORT).show();
         }).addOnFailureListener((error)->{
             Toast.makeText(this, "Falha!", Toast.LENGTH_SHORT).show();
         });
+        startActivity(new Intent(this, DashboardActivity.class));
     }
 
     public void onLocationChanged(Location location){
