@@ -6,4 +6,13 @@
     android:layout_height="match_parent"
     tools:context=".NewLocationActivity">
 
+    <TextView
+        android:id="@+id/newCoord"
+        android:text="@string/newUser"
+        android:textAlignment="center"
+        android:textSize="40sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
