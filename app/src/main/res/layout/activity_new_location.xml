@@ -6,4 +6,45 @@
     android:layout_height="match_parent"
     tools:context=".ui.NewLocationActivity">
 
+
+    <TextView
+        android:id="@+id/newLocation"
+        android:text="@string/newLocation"
+        android:textAlignment="center"
+        android:textSize="40sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/editTextLocationName"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <EditText
+        android:id="@+id/editTextLocationName"
+        android:hint="@string/locationName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginVertical="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/editTextLocationDesc"
+        android:importantForAutofill="no" />
+
+    <EditText
+        android:id="@+id/editTextLocationDesc"
+        android:hint="@string/locationDesc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginVertical="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/saveLocation"
+        android:importantForAutofill="no" />
+
+    <Button
+        android:id="@+id/saveLocation"
+        android:text="@string/saveLocation"
+        android:onClick="saveLocation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginVertical="20dp"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

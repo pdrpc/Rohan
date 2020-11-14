@@ -10,4 +10,9 @@
     <string name="LocationCoordinatesPlaceholder">LocationCoordinatesPlaceholder</string>
     <string name="LocationDtCreated">LocationDtCreated</string>
     <string name="Add">Adicionar</string>
+    <string name="newLocation">Novo Local</string>
+    <string name="saveLocation">Salvar Local</string>
+    <string name="locationName">Nome do Lugar</string>
+    <string name="locationDesc">Descrição</string>
+
 </resources>
