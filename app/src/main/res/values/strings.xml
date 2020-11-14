@@ -9,4 +9,5 @@
     <string name="LocationDescription">LocationDescriptionPlaceholder</string>
     <string name="LocationCoordinatesPlaceholder">LocationCoordinatesPlaceholder</string>
     <string name="LocationDtCreated">LocationDtCreated</string>
+    <string name="Add">Adicionar</string>
 </resources>
