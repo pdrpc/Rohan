@@ -8,16 +8,17 @@
 
     <TextView
         android:id="@+id/login"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:text="@string/login"
         android:textAlignment="center"
         android:textSize="40sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toTopOf="@+id/editTextEmail"/>
 
     <EditText
         android:id="@+id/editTextEmail"
+        android:hint="@string/email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginVertical="20dp"
@@ -26,6 +27,7 @@
 
     <EditText
         android:id="@+id/editTextPass"
+        android:hint="@string/password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginVertical="20dp"
@@ -35,6 +37,7 @@
     <Button
         android:id="@+id/signIn"
         android:onClick="login"
+        android:text="@string/login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginVertical="20dp"
@@ -44,6 +47,7 @@
     <Button
         android:id="@+id/newUser"
         android:onClick="newUser"
+        android:text="@string/newUser"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginVertical="20dp"
