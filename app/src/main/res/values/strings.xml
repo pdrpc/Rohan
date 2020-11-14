@@ -5,4 +5,8 @@
     <string name="saveUser">Salvar Usuario</string>
     <string name="newUser">Novo Usuario</string>
     <string name="login">Fazer Login</string>
+    <string name="LocationName">LocationNamePlaceholder</string>
+    <string name="LocationDescription">LocationDescriptionPlaceholder</string>
+    <string name="LocationCoordinatesPlaceholder">LocationCoordinatesPlaceholder</string>
+    <string name="LocationDtCreated">LocationDtCreated</string>
 </resources>

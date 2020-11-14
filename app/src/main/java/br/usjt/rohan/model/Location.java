@@ -5,15 +5,15 @@ public class Location {
     private String dt_created;
     private String description;
 
-    public Location(String dt_created,String description,String coordinates,String location_name;){
+    public Location(String dt_created,String description,String coordinates,String location_name){
         this.dt_created = dt_created;
         this.description = description;
         this.location_name = location_name;
         this.coordinates = coordinates;
     }
 
-    public Location(String){
-        
+    public Location() {
+
     }
     public String getDt_created() {
         return dt_created;
