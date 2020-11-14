@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".NewUserActivity">
+    tools:context=".ui.NewUserActivity">
 
     <TextView
         android:id="@+id/newUser"
@@ -23,7 +23,9 @@
         android:layout_marginHorizontal="20dp"
         android:layout_marginVertical="20dp"
         android:hint="@string/email"
-        app:layout_constraintBottom_toTopOf="@+id/editTextNewUserPass" />
+        android:inputType="textEmailAddress"
+        app:layout_constraintBottom_toTopOf="@+id/editTextNewUserPass"
+        android:importantForAutofill="no" />
 
     <EditText
         android:id="@+id/editTextNewUserPass"
@@ -32,7 +34,9 @@
         android:layout_marginHorizontal="20dp"
         android:layout_marginVertical="20dp"
         android:hint="@string/password"
-        app:layout_constraintBottom_toTopOf="@+id/saveUser" />
+        android:inputType="textPassword"
+        app:layout_constraintBottom_toTopOf="@+id/saveUser"
+        android:importantForAutofill="no" />
 
     <Button
         android:id="@+id/saveUser"

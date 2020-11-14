@@ -1,8 +1,10 @@
-package br.usjt.rohan;
+package br.usjt.rohan.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import br.usjt.rohan.R;
 
 public class NewLocationActivity extends AppCompatActivity {
 

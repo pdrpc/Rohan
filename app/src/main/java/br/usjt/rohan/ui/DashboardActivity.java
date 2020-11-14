@@ -1,8 +1,9 @@
-package br.usjt.rohan;
+package br.usjt.rohan.ui;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.Manifest;
 import android.content.Context;
@@ -14,11 +15,19 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.Query;
+
+import br.usjt.rohan.R;
+
 public class DashboardActivity extends AppCompatActivity {
 
     private LocationManager locationManager;
     private LocationListener locationListener;
     private static final int GPS_REQUEST_PERMISSION_CODE = 1001;
+    private RecyclerView firestorelist;
+    private FirebaseFirestore firebaseFirestore;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +37,15 @@ public class DashboardActivity extends AppCompatActivity {
         locationListener = location -> {
 
         };
+        firestorelist = findViewById(R.id.firestore_list);
+        firebaseFirestore = FirebaseFirestore.getInstance();
+        //Query
+            Query query = firebaseFirestore.collection("Locations");
+        //RecyclerView Opções
+            FirestoreRecyclerOptions<>
     }
+
+
 
     @Override
     protected void onStart(){
@@ -64,7 +81,7 @@ public class DashboardActivity extends AppCompatActivity {
         }
     }
 
-    public void newLocationRedirect(View view){
+    public void newLocation(View view){
         startActivity(new Intent(this, NewLocationActivity.class));
     }
 }

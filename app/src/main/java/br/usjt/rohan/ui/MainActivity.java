@@ -1,4 +1,4 @@
-package br.usjt.rohan;
+package br.usjt.rohan.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,6 +10,8 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
+
+import br.usjt.rohan.R;
 
 public class MainActivity extends AppCompatActivity {
 
