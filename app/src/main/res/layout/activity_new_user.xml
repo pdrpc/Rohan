@@ -6,5 +6,42 @@
     android:layout_height="match_parent"
     tools:context=".NewUserActivity">
 
+    <TextView
+        android:id="@+id/newUser"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/newUser"
+        android:textAlignment="center"
+        android:textSize="40sp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/editTextNewUserEmail" />
+
+    <EditText
+        android:id="@+id/editTextNewUserEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginVertical="20dp"
+        android:hint="@string/email"
+        app:layout_constraintBottom_toTopOf="@+id/editTextNewUserPass" />
+
+    <EditText
+        android:id="@+id/editTextNewUserPass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginVertical="20dp"
+        android:hint="@string/password"
+        app:layout_constraintBottom_toTopOf="@+id/saveUser" />
+
+    <Button
+        android:id="@+id/saveUser"
+        android:onClick="newUserSignUp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginVertical="20dp"
+        android:text="@string/saveUser"
+        app:layout_constraintBottom_toBottomOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

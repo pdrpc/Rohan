@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Rohan</string>
+    <string name="email">Email</string>
+    <string name="password">Senha</string>
+    <string name="saveUser">Salvar Usuario</string>
+    <string name="newUser">Novo Usuario</string>
+    <string name="login">Fazer Login</string>
 </resources>
