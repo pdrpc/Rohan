@@ -95,7 +95,7 @@ public class NewLocationActivity extends AppCompatActivity {
         location.put(KEY_COORDINATES, coordinates);
         location.put(KEY_DT_CREATED, dt_created);
 
-        db.collection("Locations").document("My first Location").set(location)
+        db.collection("Locations").document(location_name).set(location)
                 .addOnSuccessListener((result)->{
                     Toast.makeText(this, "Sucesso!", Toast.LENGTH_SHORT).show();
                 }).addOnFailureListener((error)->{
