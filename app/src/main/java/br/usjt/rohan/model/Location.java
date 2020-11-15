@@ -4,6 +4,8 @@ package br.usjt.rohan.model;
 public class Location {
     private String dt_created;
     private String description;
+    private String coordinates;
+    private String location_name;
 
     public Location(String dt_created,String description,String coordinates,String location_name){
         this.dt_created = dt_created;
@@ -47,6 +49,5 @@ public class Location {
         this.location_name = location_name;
     }
 
-    private String coordinates;
-    private String location_name;
+
 }
