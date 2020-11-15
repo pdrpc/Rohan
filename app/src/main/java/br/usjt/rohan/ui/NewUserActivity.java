@@ -2,6 +2,7 @@ package br.usjt.rohan.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -35,6 +36,6 @@ public class NewUserActivity extends AppCompatActivity {
             Toast.makeText(this, result.getUser().getEmail(), Toast.LENGTH_SHORT).show();
             finish();
         }).addOnFailureListener((error-> error.printStackTrace()));
-
+        startActivity(new Intent(this, MainActivity.class));
     }
 }

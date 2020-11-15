@@ -31,9 +31,9 @@ dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
-    implementation 'com.google.firebase:firebase-auth:16.0.5'
     implementation "androidx.cardview:cardview:1.0.0"
     implementation 'androidx.recyclerview:recyclerview:1.1.0'
+    implementation 'com.google.firebase:firebase-auth:17.0.0'
     implementation 'com.google.firebase:firebase-firestore:17.1.2'
     implementation 'com.firebaseui:firebase-ui-firestore:7.0.0'
     testImplementation 'junit:junit:4.12'
