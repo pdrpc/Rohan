@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "947369399462",
+    "firebase_url": "https://rohan-ff737.firebaseio.com",
+    "project_id": "rohan-ff737",
+    "storage_bucket": "rohan-ff737.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:947369399462:android:2df968fb948a544f291067",
+        "android_client_info": {
+          "package_name": "br.usjt.rohan"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "947369399462-6i8h1iuuf9r5mev7k0vhd2jcbneiq6qq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "br.usjt.rohan",
+            "certificate_hash": "ca38a47eb70180a192e587e294698b7e7dc40506"
+          }
+        },
+        {
+          "client_id": "947369399462-1id6u4t87fvlmv7rti8tmuj2o6n0tr3e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBRWPqdBGmbBiMApihT_ZLF71QrNENCr3A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "947369399462-1id6u4t87fvlmv7rti8tmuj2o6n0tr3e.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
