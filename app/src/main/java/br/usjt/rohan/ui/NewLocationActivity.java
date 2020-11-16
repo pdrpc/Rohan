@@ -13,22 +13,20 @@ import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Build;
 import android.os.Bundle;
-import android.telephony.CarrierConfigManager;
+import android.os.CancellationSignal;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.Executor;
+import java.util.function.Consumer;
 
 import br.usjt.rohan.R;
 
@@ -52,8 +50,12 @@ public class NewLocationActivity extends AppCompatActivity {
     String dataCriada = sdf.format(gc.getTime());
 
     private LocationManager locationManager;
+    private CancellationSignal cancellationSignal;
+    private Executor executor;
+    private Location location;
+    public Consumer consumer;
 
-    private FirebaseFirestore db = FirebaseFirestore.getInstance();
+    private FirebaseFirestore firebaseFirestore = FirebaseFirestore.getInstance();
     private FirebaseAuth auth = FirebaseAuth.getInstance();
 
 
@@ -75,6 +77,7 @@ public class NewLocationActivity extends AppCompatActivity {
             return;
         }
 
+//        Location location = locationManager.getCurrentLocation(LocationManager.GPS_PROVIDER, cancellationSignal, executor, Consumer<this.location> consumer);
 
         Location location = locationManager.getLastKnownLocation(locationManager.GPS_PROVIDER);
 
@@ -92,7 +95,7 @@ public class NewLocationActivity extends AppCompatActivity {
         String location_name = editTextLocationName.getEditableText().toString();
         String description = editTextLocationDesc.getEditableText().toString();
         String dt_created = dataCriada;
-        String coordinates = ("Long: " + longitude + System.getProperty("line.separator") + " Lat: " + latitude + System.getProperty("line.separator"));
+        String coordinates = ("Lat: " + latitude + System.getProperty("line.separator") + "Long: " + longitude);
 
         Map<String, Object> location = new HashMap<>();
         location.put(KEY_NAME, location_name);
@@ -100,7 +103,7 @@ public class NewLocationActivity extends AppCompatActivity {
         location.put(KEY_COORDINATES, coordinates);
         location.put(KEY_DT_CREATED, dt_created);
 
-        db.collection(collection).document(location_name).set(location)
+        firebaseFirestore.collection(collection).document(location_name).set(location)
                 .addOnSuccessListener((result)->{
                     Toast.makeText(this, "Sucesso!", Toast.LENGTH_SHORT).show();
                 }).addOnFailureListener((error)->{
