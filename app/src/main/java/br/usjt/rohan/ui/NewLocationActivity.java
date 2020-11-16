@@ -17,6 +17,7 @@ import android.telephony.CarrierConfigManager;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
@@ -42,6 +43,8 @@ public class NewLocationActivity extends AppCompatActivity {
 
     private EditText editTextLocationName;
     private EditText editTextLocationDesc;
+    private TextView textViewLocationLat;
+    private TextView textViewLocationLon;
     private String collection;
 
     public double latitude;
@@ -67,6 +70,8 @@ public class NewLocationActivity extends AppCompatActivity {
 
         editTextLocationName = findViewById(R.id.editTextLocationName);
         editTextLocationDesc = findViewById(R.id.editTextLocationDesc);
+        textViewLocationLat = findViewById(R.id.textViewLocationLat);
+        textViewLocationLon = findViewById(R.id.textViewLocationLon);
 
         locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
 
@@ -75,10 +80,13 @@ public class NewLocationActivity extends AppCompatActivity {
             return;
         }
 
-
         Location location = locationManager.getLastKnownLocation(locationManager.GPS_PROVIDER);
 
         onLocationChanged(location);
+
+        textViewLocationLat.setText("Lat: " + latitude);
+        textViewLocationLon.setText("Lon: " + longitude);
+
 
     }
 
