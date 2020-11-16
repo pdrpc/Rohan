@@ -18,6 +18,7 @@
 
     <EditText
         android:id="@+id/editTextNewUserEmail"
+        android:inputType="textEmailAddress"
         android:hint="@string/email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -27,6 +28,7 @@
 
     <EditText
         android:id="@+id/editTextNewUserPass"
+        android:inputType="textPassword"
         android:hint="@string/password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -37,6 +39,7 @@
     <Button
         android:id="@+id/saveUser"
         android:text="@string/saveUser"
+        android:background="@drawable/rounded_corner_accent"
         android:onClick="newUserSignUp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
