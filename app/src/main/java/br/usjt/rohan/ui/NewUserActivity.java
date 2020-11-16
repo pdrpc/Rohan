@@ -34,8 +34,12 @@ public class NewUserActivity extends AppCompatActivity {
 
         auth.createUserWithEmailAndPassword(email, senha).addOnSuccessListener((result)->{
             Toast.makeText(this, result.getUser().getEmail(), Toast.LENGTH_SHORT).show();
+            startActivity(new Intent(this, MainActivity.class));
             finish();
-        }).addOnFailureListener((error-> error.printStackTrace()));
-        startActivity(new Intent(this, MainActivity.class));
+        }).addOnFailureListener((error-> {
+            Toast.makeText(this, "Email ou senha inválidos!", Toast.LENGTH_LONG).show();
+            error.printStackTrace();
+        }));
+
     }
 }

@@ -21,6 +21,7 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.text.SimpleDateFormat;
@@ -41,6 +42,7 @@ public class NewLocationActivity extends AppCompatActivity {
 
     private EditText editTextLocationName;
     private EditText editTextLocationDesc;
+    private String collection;
 
     public double latitude;
     public double longitude;
@@ -52,6 +54,7 @@ public class NewLocationActivity extends AppCompatActivity {
     private LocationManager locationManager;
 
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
+    private FirebaseAuth auth = FirebaseAuth.getInstance();
 
 
     @RequiresApi(api = Build.VERSION_CODES.R)
@@ -59,6 +62,8 @@ public class NewLocationActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_location);
+
+        collection = auth.getUid();
 
         editTextLocationName = findViewById(R.id.editTextLocationName);
         editTextLocationDesc = findViewById(R.id.editTextLocationDesc);
@@ -95,7 +100,7 @@ public class NewLocationActivity extends AppCompatActivity {
         location.put(KEY_COORDINATES, coordinates);
         location.put(KEY_DT_CREATED, dt_created);
 
-        db.collection("Locations").document(location_name).set(location)
+        db.collection(collection).document(location_name).set(location)
                 .addOnSuccessListener((result)->{
                     Toast.makeText(this, "Sucesso!", Toast.LENGTH_SHORT).show();
                 }).addOnFailureListener((error)->{

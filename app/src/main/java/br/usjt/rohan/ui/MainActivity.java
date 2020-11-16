@@ -19,9 +19,6 @@ public class MainActivity extends AppCompatActivity {
     private EditText editTextPass;
     private FirebaseAuth auth;
 
-    public static void info(String s){
-    }
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,18 +36,11 @@ public class MainActivity extends AppCompatActivity {
         String email = editTextEmail.getEditableText().toString();
         String senha = editTextPass.getEditableText().toString();
         auth.signInWithEmailAndPassword(email, senha).addOnSuccessListener((result)->{
-            Toast.makeText(this, "Sucesso!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Bem vindo!", Toast.LENGTH_SHORT).show();
+            startActivity(new Intent(this, DashboardActivity.class));
         }).addOnFailureListener((error)->{
-            Toast.makeText(this, "Falha!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Email ou senha incorretos", Toast.LENGTH_LONG).show();
         });
-        startActivity(new Intent(this, DashboardActivity.class));
-    }
-
-    public void onLocationChanged(Location location){
-
-    }
-
-    public void  onStatusChanged(String provider, int Status, Bundle extras){
 
     }
 }

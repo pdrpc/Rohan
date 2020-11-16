@@ -14,5 +14,6 @@
     <string name="saveLocation">Salvar Local</string>
     <string name="locationName">Nome do Lugar</string>
     <string name="locationDesc">Descrição</string>
+    <string name="String">String</string>
 
 </resources>
