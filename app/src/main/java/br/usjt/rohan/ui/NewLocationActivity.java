@@ -8,16 +8,12 @@ import androidx.core.content.ContextCompat;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
-import android.content.Context;
 import android.content.Intent;
 import android.content.IntentSender;
 import android.content.pm.PackageManager;
 import android.location.Location;
-import android.location.LocationListener;
-import android.location.LocationManager;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.CancellationSignal;
 import android.os.Looper;
 import android.util.Log;
 import android.view.View;
@@ -44,8 +40,6 @@ import java.text.SimpleDateFormat;
 import java.util.GregorianCalendar;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.concurrent.Executor;
-import java.util.function.Consumer;
 
 import br.usjt.rohan.R;
 
@@ -204,17 +198,35 @@ public class NewLocationActivity extends AppCompatActivity {
         firebaseFirestore.collection(collection).document(location_name).set(location)
                 .addOnSuccessListener((result)->{
                     Toast.makeText(this, "Sucesso!", Toast.LENGTH_SHORT).show();
+                    Intent i = new Intent(NewLocationActivity.this, DashboardActivity.class);
+                    i.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+                    startActivity(i);
+                    cleanData();
+                    finish();
                 }).addOnFailureListener((error)->{
             Toast.makeText(this, "Falha!", Toast.LENGTH_SHORT).show();
         });
 
-        startActivity(new Intent(this, DashboardActivity.class));
+    }
+
+    private void cleanData() {
+        editTextLocationDesc.setText("");
+        editTextLocationName.setText("");
     }
 
     @Override
     protected void onResume() {
         super.onResume();
         startLocationUpdates();
+    }
+
+    @Override
+    public void onBackPressed(){
+        super.onBackPressed();
+        Intent i = new Intent(NewLocationActivity.this, DashboardActivity.class);
+        i.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+        startActivity(i);
+        finish();
     }
 
     @Override

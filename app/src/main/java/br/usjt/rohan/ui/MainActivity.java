@@ -3,7 +3,6 @@ package br.usjt.rohan.ui;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.location.Location;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -38,16 +37,16 @@ public class MainActivity extends AppCompatActivity {
         auth.signInWithEmailAndPassword(email, senha).addOnCompleteListener((result)->{
             Toast.makeText(this, "Bem vindo!", Toast.LENGTH_SHORT).show();
             startActivity(new Intent(this, DashboardActivity.class));
+            cleanData();
         }).addOnFailureListener((error)->{
             Toast.makeText(this, "Email ou senha incorretos", Toast.LENGTH_LONG).show();
         });
 
     }
 
-    @Override
-    protected void onStop() {
-        super.onStop();
+    private void cleanData() {
         editTextEmail.setText("");
         editTextPass.setText("");
     }
+
 }
