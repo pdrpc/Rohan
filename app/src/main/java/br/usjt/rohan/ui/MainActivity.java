@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
     public void login (View v){
         String email = editTextEmail.getEditableText().toString();
         String senha = editTextPass.getEditableText().toString();
-        auth.signInWithEmailAndPassword(email, senha).addOnSuccessListener((result)->{
+        auth.signInWithEmailAndPassword(email, senha).addOnCompleteListener((result)->{
             Toast.makeText(this, "Bem vindo!", Toast.LENGTH_SHORT).show();
             startActivity(new Intent(this, DashboardActivity.class));
         }).addOnFailureListener((error)->{

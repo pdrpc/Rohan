@@ -9,13 +9,12 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
-import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.CancellationSignal;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -25,13 +24,10 @@ import java.text.SimpleDateFormat;
 import java.util.GregorianCalendar;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.concurrent.Executor;
-import java.util.function.Consumer;
 
 import br.usjt.rohan.R;
 
 public class NewLocationActivity extends AppCompatActivity {
-    private static final String TAG = "NewLocationActivity";
 
     private static final String KEY_NAME = "location_name";
     private static final String KEY_DESCRIPTION = "description";
@@ -40,6 +36,8 @@ public class NewLocationActivity extends AppCompatActivity {
 
     private EditText editTextLocationName;
     private EditText editTextLocationDesc;
+    private TextView textViewLocationLat;
+    private TextView textViewLocationLon;
     private String collection;
 
     public double latitude;
@@ -50,10 +48,6 @@ public class NewLocationActivity extends AppCompatActivity {
     String dataCriada = sdf.format(gc.getTime());
 
     private LocationManager locationManager;
-    private CancellationSignal cancellationSignal;
-    private Executor executor;
-    private Location location;
-    public Consumer consumer;
 
     private FirebaseFirestore firebaseFirestore = FirebaseFirestore.getInstance();
     private FirebaseAuth auth = FirebaseAuth.getInstance();
@@ -69,6 +63,9 @@ public class NewLocationActivity extends AppCompatActivity {
 
         editTextLocationName = findViewById(R.id.editTextLocationName);
         editTextLocationDesc = findViewById(R.id.editTextLocationDesc);
+        textViewLocationLat = findViewById(R.id.textViewLocationLat);
+        textViewLocationLon = findViewById(R.id.textViewLocationLon);
+
 
         locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
 
@@ -77,8 +74,6 @@ public class NewLocationActivity extends AppCompatActivity {
             return;
         }
 
-//        Location location = locationManager.getCurrentLocation(LocationManager.GPS_PROVIDER, cancellationSignal, executor, Consumer<this.location> consumer);
-
         Location location = locationManager.getLastKnownLocation(locationManager.GPS_PROVIDER);
 
         onLocationChanged(location);
@@ -86,8 +81,12 @@ public class NewLocationActivity extends AppCompatActivity {
     }
 
     public void onLocationChanged (Location location){
-        this.longitude = location.getLongitude();
-        this.latitude = location.getLatitude();
+        if (location != null){
+            this.longitude = location.getLongitude();
+            this.latitude = location.getLatitude();
+            this.textViewLocationLat.setText("Lat: " + latitude);
+            this.textViewLocationLon.setText("Lon: " + longitude);
+        }
     }
 
 
