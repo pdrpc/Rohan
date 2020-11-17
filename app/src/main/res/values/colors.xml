@@ -4,4 +4,6 @@
     <color name="colorPrimaryDark">#38813B</color>
     <color name="colorAccent">#FF9800</color>
     <color name="cardViewText">#FFFFFF</color>
+    <color name="fadeSolid">#FFFFFF</color>
+    <color name="fadeTrans">#00FFFFFF</color>
 </resources>
