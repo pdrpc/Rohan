@@ -8,7 +8,7 @@
     <string name="LocationName">LocationNamePlaceholder</string>
     <string name="LocationDescription">LocationDescriptionPlaceholder</string>
     <string name="LocationCoordinatesPlaceholder">LocationCoordinatesPlaceholder</string>
-    <string name="LocationDtCreated">LocationDtCreated</string>
+    <string name="LocationDtCreated">00/00/0000</string>
     <string name="Add">Adicionar</string>
     <string name="newLocation">Novo Local</string>
     <string name="saveLocation">Salvar Local</string>

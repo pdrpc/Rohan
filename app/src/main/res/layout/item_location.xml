@@ -9,67 +9,56 @@
     android:layout_marginBottom="4dp"
     android:layout_marginStart="8dp"
     android:layout_marginEnd="8dp"
-    android:textAlignment="center"
-    app:cardCornerRadius="4dp"
+    app:cardCornerRadius="10sp"
+    app:cardBackgroundColor="@color/colorPrimaryDark"
     android:clickable="true"
     android:longClickable="true">
 
-    <LinearLayout
-        android:background="@color/colorPrimary"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+    <RelativeLayout
+        android:id="@+id/relativeLay"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:paddingVertical="10sp"
+        android:paddingHorizontal="10sp">
 
         <TextView
             android:id="@+id/textViewLocationName"
-            android:layout_width="match_parent"
+            android:text="@string/LocationName"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="@color/textLight"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="16dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="5dp"
-            android:hint="@string/LocationName"
-            android:textColor="@color/cardViewText"
-            android:textColorHint="@color/colorPrimaryDark"
-            android:textSize="18sp"
-            app:layout_constraintBottom_toTopOf="@+id/textViewLocationDtCreated" />
+            android:layout_alignParentTop="true"/>
 
         <TextView
             android:id="@+id/textViewLocationDtCreated"
-            android:layout_width="match_parent"
+            android:text="@string/LocationDtCreated"
+            android:textSize="12sp"
+            android:textColor="@color/textLight"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="16sp"
-            android:layout_marginVertical="5sp"
-            android:hint="@string/LocationDtCreated"
-            android:textColor="@color/cardViewText"
-            android:textColorHint="@color/colorPrimaryDark"
-            android:textSize="18sp"
-            app:layout_constraintBottom_toTopOf="@+id/textViewLocationDescription" />
+            android:layout_alignParentEnd="true"/>
 
         <TextView
             android:id="@+id/textViewLocationDescription"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="16sp"
-            android:layout_marginVertical="5sp"
-            android:hint="@string/LocationDescription"
-            android:textColor="@color/cardViewText"
-            android:textColorHint="@color/colorPrimaryDark"
+            android:layout_marginVertical="10sp"
+            android:text="@string/LocationDescription"
             android:textSize="18sp"
-            app:layout_constraintBottom_toTopOf="@+id/textViewLocationCoordinates" />
+            android:textColor="@color/textLight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textViewLocationName"/>
 
         <TextView
             android:id="@+id/textViewLocationCoordinates"
-            android:layout_width="match_parent"
+            android:text="@string/LocationCoordinatesPlaceholder"
+            android:textSize="12sp"
+            android:textColor="@color/textLight"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="16sp"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="10dp"
-            android:hint="@string/LocationCoordinatesPlaceholder"
-            android:textColor="@color/cardViewText"
-            android:textColorHint="@color/colorPrimaryDark"
-            app:layout_constraintBottom_toTopOf="@+id/textViewLocationUid" />
+            android:layout_below="@+id/textViewLocationDescription"/>
 
-
-    </LinearLayout>
+    </RelativeLayout>
 
 </androidx.cardview.widget.CardView>

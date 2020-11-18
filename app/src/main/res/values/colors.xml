@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#4CAF50</color>
-    <color name="colorPrimaryDark">#38813B</color>
-    <color name="colorAccent">#FF9800</color>
-    <color name="cardViewText">#FFFFFF</color>
-    <color name="fadeSolid">#FFFFFF</color>
-    <color name="fadeTrans">#00FFFFFF</color>
+    <color name="colorPrimary">#129ae2</color>
+    <color name="colorPrimaryDark">#0e79b2</color>
+    <color name="colorAccent">#e16451</color>
+
+    <color name="textLight">#FFFFFF</color>
+    <color name="textDark">#1f1f1e</color>
+    <color name="fieldGrey">#CCCCCC</color>
+    <color name="darkPrimary">#242423</color>
+    <color name="darkPrimaryDark">#333533</color>
+
+
+
 </resources>

@@ -1,12 +1,23 @@
 package br.usjt.rohan.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
+import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.core.graphics.drawable.DrawableCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.content.res.ColorStateList;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.CompoundButton;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
+import android.widget.Switch;
 import android.widget.Toast;
 
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
@@ -28,7 +39,6 @@ public class DashboardActivity extends AppCompatActivity implements FirestoreAda
     private FirestoreAdapter adapter;
     private String collection;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,7 +59,7 @@ public class DashboardActivity extends AppCompatActivity implements FirestoreAda
                 .build();
         adapter = new FirestoreAdapter(options, this);
 
-        locationList.setHasFixedSize(true);
+        locationList.setHasFixedSize(false);
         locationList.setLayoutManager(new LinearLayoutManager(this));
         locationList.setAdapter(adapter);
     }
