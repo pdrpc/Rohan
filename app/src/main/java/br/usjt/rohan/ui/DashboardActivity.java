@@ -1,5 +1,6 @@
 package br.usjt.rohan.ui;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -7,10 +8,12 @@ import androidx.core.graphics.drawable.DrawableCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -94,10 +97,24 @@ public class DashboardActivity extends AppCompatActivity implements FirestoreAda
 
     @Override
     public void onItemLongClick(Location snapshot, int position) {
-        firebaseFirestore.collection(collection).document(snapshot.getLocation_name()).delete().addOnSuccessListener((result)->{
-            Toast.makeText(this, "Local excluído!", Toast.LENGTH_SHORT).show();
-        }).addOnFailureListener((error)->{
-            Toast.makeText(this, "Oops, something went wrong", Toast.LENGTH_LONG).show();
-        });
+        Log.d("Long Click", "got the looooong click");
+        AlertDialog.Builder builder = new AlertDialog.Builder(DashboardActivity.this);
+        builder.setTitle("Deletar")
+                .setMessage("Tem certeza que deseja deletar " + snapshot.getLocation_name() + "?")
+                .setPositiveButton("Sim", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        firebaseFirestore.collection(collection).document(snapshot.getLocation_name()).delete();
+                        Toast.makeText(DashboardActivity.this, "Local excluído!", Toast.LENGTH_SHORT).show();
+                    }
+                })
+                .setNegativeButton("Não", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.dismiss();
+                    }
+                });
+        AlertDialog dialog = builder.create();
+        dialog.show();
     }
 }
