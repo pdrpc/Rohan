@@ -10,7 +10,7 @@
     android:layout_marginStart="8dp"
     android:layout_marginEnd="8dp"
     app:cardCornerRadius="10sp"
-    app:cardBackgroundColor="@color/colorPrimaryDark"
+    app:cardBackgroundColor="?attr/cardViewBackground"
     android:clickable="true"
     android:longClickable="true">
 
@@ -24,9 +24,9 @@
         <TextView
             android:id="@+id/textViewLocationName"
             android:text="@string/LocationName"
+            android:textColor="?attr/colorText"
             android:textSize="24sp"
             android:textStyle="bold"
-            android:textColor="@color/textLight"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"/>
@@ -35,7 +35,7 @@
             android:id="@+id/textViewLocationDtCreated"
             android:text="@string/LocationDtCreated"
             android:textSize="12sp"
-            android:textColor="@color/textLight"
+            android:textColor="?attr/colorText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"/>
@@ -45,7 +45,7 @@
             android:layout_marginVertical="10sp"
             android:text="@string/LocationDescription"
             android:textSize="18sp"
-            android:textColor="@color/textLight"
+            android:textColor="?attr/colorText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/textViewLocationName"/>
@@ -54,7 +54,7 @@
             android:id="@+id/textViewLocationCoordinates"
             android:text="@string/LocationCoordinatesPlaceholder"
             android:textSize="12sp"
-            android:textColor="@color/textLight"
+            android:textColor="?attr/colorText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/textViewLocationDescription"/>

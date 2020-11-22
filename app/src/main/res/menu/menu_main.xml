@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:id="@+id/act_bar_switch"
+        android:title="@string/act_bar_switch"
+        app:showAsAction="always"
+        app:actionLayout="@layout/switch_layout"/>
+
+</menu>

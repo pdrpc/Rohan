@@ -5,7 +5,7 @@
     android:id="@+id/constraintDash"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/textLight"
+    android:background="?attr/backgroundColor"
     tools:context=".ui.DashboardActivity">
 
     <ImageView
@@ -18,7 +18,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:tint="@color/darkPrimaryDark" />
+        app:tint="?attr/colorText"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/firestore_list"

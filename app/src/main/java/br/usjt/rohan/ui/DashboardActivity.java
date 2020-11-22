@@ -8,11 +8,15 @@ import androidx.core.graphics.drawable.DrawableCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.annotation.SuppressLint;
+import android.app.Application;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.ColorStateList;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -31,6 +35,7 @@ import com.google.firebase.firestore.Query;
 
 import br.usjt.rohan.R;
 import br.usjt.rohan.model.Location;
+import maes.tech.intentanim.CustomIntent;
 
 public class DashboardActivity extends AppCompatActivity implements FirestoreAdapter.OnListItemLongClick {
 
@@ -41,9 +46,23 @@ public class DashboardActivity extends AppCompatActivity implements FirestoreAda
     private FirebaseAuth auth;
     private FirestoreAdapter adapter;
     private String collection;
+    SharedPreferences sharedPreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+
+        if (sharedPreferences.getString("darkMode", null).equals("ativado")){
+            setTheme(R.style.AppThemeDark);
+            SharedPreferences.Editor editorIf = sharedPreferences.edit();
+            editorIf.putString("darkMode", "ativado");
+            editorIf.apply();
+        }else {
+            setTheme(R.style.AppTheme);
+            SharedPreferences.Editor editorIf = sharedPreferences.edit();
+            editorIf.putString("darkMode", "desativado");
+            editorIf.apply();
+        }
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
 
@@ -65,9 +84,37 @@ public class DashboardActivity extends AppCompatActivity implements FirestoreAda
         locationList.setHasFixedSize(false);
         locationList.setLayoutManager(new LinearLayoutManager(this));
         locationList.setAdapter(adapter);
+
+        CustomIntent.customType(DashboardActivity.this, "fadein-to-fadeout");
+
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_main, menu);
 
+        MenuItem switch_dark_mode = menu.findItem(R.id.act_bar_switch);
+
+        @SuppressLint("UseSwitchCompatOrMaterialCode")
+        Switch widget_switch = switch_dark_mode.getActionView().findViewById(R.id.switch_widget);
+
+        widget_switch.setChecked(sharedPreferences.getString("darkMode", null).equals("ativado"));
+
+        widget_switch.setOnCheckedChangeListener((compoundButton, isChecked) -> {
+            if(isChecked){
+                SharedPreferences.Editor editorIf = sharedPreferences.edit();
+                editorIf.putString("darkMode", "ativado");
+                editorIf.apply();
+            }else{
+                SharedPreferences.Editor editorIf = sharedPreferences.edit();
+                editorIf.putString("darkMode", "desativado");
+                editorIf.apply();
+            }
+            startActivity(new Intent(this, DashboardActivity.class));
+            finish();
+        });
+        return true;
+    }
 
     @Override
     protected void onStart(){

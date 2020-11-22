@@ -15,5 +15,6 @@
     <string name="locationName">Nome do Lugar</string>
     <string name="locationDesc">Descrição</string>
     <string name="String">String</string>
+    <string name="act_bar_switch">act_bar_switch</string>
 
 </resources>
