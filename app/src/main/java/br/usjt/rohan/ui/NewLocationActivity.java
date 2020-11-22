@@ -10,14 +10,19 @@ import android.Manifest;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.IntentSender;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Looper;
+import android.preference.PreferenceManager;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -42,6 +47,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import br.usjt.rohan.R;
+import maes.tech.intentanim.CustomIntent;
 
 public class NewLocationActivity extends AppCompatActivity {
 
@@ -57,6 +63,7 @@ public class NewLocationActivity extends AppCompatActivity {
     private TextView textViewLocationLat;
     private TextView textViewLocationLon;
     private String collection;
+    SharedPreferences sharedPreferences;
 
     private FirebaseFirestore firebaseFirestore = FirebaseFirestore.getInstance();
     private FirebaseAuth auth = FirebaseAuth.getInstance();
@@ -92,6 +99,19 @@ public class NewLocationActivity extends AppCompatActivity {
     @RequiresApi(api = Build.VERSION_CODES.R)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+
+        if (sharedPreferences.getString("darkMode", null).equals("ativado")){
+            setTheme(R.style.AppThemeDark);
+            SharedPreferences.Editor editorIf = sharedPreferences.edit();
+            editorIf.putString("darkMode", "ativado");
+            editorIf.apply();
+        }else {
+            setTheme(R.style.AppTheme);
+            SharedPreferences.Editor editorIf = sharedPreferences.edit();
+            editorIf.putString("darkMode", "desativado");
+            editorIf.apply();
+        }
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_location);
 
@@ -109,6 +129,35 @@ public class NewLocationActivity extends AppCompatActivity {
         locationRequest.setFastestInterval(1000);
         locationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
 
+        CustomIntent.customType(NewLocationActivity.this, "fadein-to-fadeout");
+
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+
+        MenuItem switch_dark_mode = menu.findItem(R.id.act_bar_switch);
+
+        @SuppressLint("UseSwitchCompatOrMaterialCode")
+        Switch widget_switch = switch_dark_mode.getActionView().findViewById(R.id.switch_widget);
+
+        widget_switch.setChecked(sharedPreferences.getString("darkMode", null).equals("ativado"));
+
+        widget_switch.setOnCheckedChangeListener((compoundButton, isChecked) -> {
+            if(isChecked){
+                SharedPreferences.Editor editorIf = sharedPreferences.edit();
+                editorIf.putString("darkMode", "ativado");
+                editorIf.apply();
+            }else{
+                SharedPreferences.Editor editorIf = sharedPreferences.edit();
+                editorIf.putString("darkMode", "desativado");
+                editorIf.apply();
+            }
+            startActivity(new Intent(this, NewLocationActivity.class));
+            finish();
+        });
+        return true;
     }
 
     @Override
@@ -179,9 +228,6 @@ public class NewLocationActivity extends AppCompatActivity {
             }
         }
     }
-
-
-
 
     public void saveLocation(View view) {
         String location_name = editTextLocationName.getEditableText().toString();
