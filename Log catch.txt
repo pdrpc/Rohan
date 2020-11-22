@@ -1,0 +1,192 @@
+
+11/16 21:48:20: Launching 'app' on Physical Device.
+Install successfully finished in 10 s 32 ms.
+$ adb shell am start -n "br.usjt.rohan/br.usjt.rohan.ui.MainActivity" -a android.intent.action.MAIN -c android.intent.category.LAUNCHER
+Connected to process 23010 on device 'motorola-moto_g_6__plus-0048024262'.
+Capturing and displaying logcat messages from application. This behavior can be disabled in the "Logcat output" section of the "Debugger" settings page.
+I/br.usjt.rohan: Late-enabling -Xcheck:jni
+I/FirebaseApp: Device unlocked: initializing all Firebase APIs for app [DEFAULT]
+W/DynamiteModule: Local module descriptor class for com.google.firebase.auth not found.
+I/FirebaseInitProvider: FirebaseApp initialization successful
+W/DynamiteModule: Local module descriptor class for com.google.firebase.auth not found.
+W/br.usjt.rohan: Accessing hidden method Landroid/graphics/drawable/Drawable;->getOpticalInsets()Landroid/graphics/Insets; (light greylist, linking)
+    Accessing hidden field Landroid/graphics/Insets;->left:I (light greylist, linking)
+    Accessing hidden field Landroid/graphics/Insets;->right:I (light greylist, linking)
+    Accessing hidden field Landroid/graphics/Insets;->top:I (light greylist, linking)
+    Accessing hidden field Landroid/graphics/Insets;->bottom:I (light greylist, linking)
+I/FirebaseAuth: [FirebaseAuth:] Loading module via FirebaseOptions.
+    [FirebaseAuth:] Preparing to create service connection to gms implementation
+W/br.usjt.rohan: Accessing hidden field Landroid/view/WindowInsets;->CONSUMED:Landroid/view/WindowInsets; (light greylist, reflection)
+W/br.usjt.rohan: Accessing hidden method Landroid/view/View;->getAccessibilityDelegate()Landroid/view/View$AccessibilityDelegate; (light greylist, linking)
+W/br.usjt.rohan: Accessing hidden method Landroid/view/View;->computeFitSystemWindows(Landroid/graphics/Rect;Landroid/graphics/Rect;)Z (light greylist, reflection)
+W/br.usjt.rohan: Accessing hidden method Landroid/view/ViewGroup;->makeOptionalFitsSystemWindows()V (light greylist, reflection)
+D/OpenGLRenderer: Skia GL Pipeline
+W/br.usjt.rohan: Accessing hidden method Landroid/graphics/Insets;->of(IIII)Landroid/graphics/Insets; (light greylist, linking)
+I/Adreno: QUALCOMM build                   : 9128d71, Ib33d3e8e13
+    Build Date                       : 11/02/18
+    OpenGL ES Shader Compiler Version: EV031.25.03.01
+    Local Branch                     : 
+    Remote Branch                    : 
+    Remote Branch                    : 
+    Reconstruct Branch               : 
+    Build Config                     : S L 6.0.7 AArch64
+I/Adreno: PFP: 0x005ff112, ME: 0x005ff066
+I/ConfigStore: android::hardware::configstore::V1_0::ISurfaceFlingerConfigs::hasWideColorDisplay retrieved: 0
+I/ConfigStore: android::hardware::configstore::V1_0::ISurfaceFlingerConfigs::hasHDRDisplay retrieved: 0
+I/OpenGLRenderer: Initialized EGL, version 1.4
+D/OpenGLRenderer: Swap behavior 2
+W/ActivityThread: handleWindowVisibility: no activity for token android.os.BinderProxy@5d8f89
+I/AssistStructure: Flattened final assist data: 2896 bytes, containing 1 windows, 10 views
+E/SpannableStringBuilder: SPAN_EXCLUSIVE_EXCLUSIVE spans cannot have a zero length
+    SPAN_EXCLUSIVE_EXCLUSIVE spans cannot have a zero length
+E/SpannableStringBuilder: SPAN_EXCLUSIVE_EXCLUSIVE spans cannot have a zero length
+    SPAN_EXCLUSIVE_EXCLUSIVE spans cannot have a zero length
+E/SpannableStringBuilder: SPAN_EXCLUSIVE_EXCLUSIVE spans cannot have a zero length
+    SPAN_EXCLUSIVE_EXCLUSIVE spans cannot have a zero length
+W/IInputConnectionWrapper: beginBatchEdit on inactive InputConnection
+    setComposingRegion on inactive InputConnection
+    endBatchEdit on inactive InputConnection
+    getExtractedText on inactive InputConnection
+W/IInputConnectionWrapper: getTextBeforeCursor on inactive InputConnection
+W/BiChannelGoogleApi: [FirebaseAuth: ] getGoogleApiForMethod() returned Gms: com.google.firebase.auth.api.internal.zzak@65c1241
+W/System.err: com.google.firebase.auth.FirebaseAuthUserCollisionException: The email address is already in use by another account.
+W/System.err:     at com.google.firebase.auth.api.internal.zzdr.zzb(Unknown Source:5)
+        at com.google.firebase.auth.api.internal.zzeu.zza(Unknown Source:16)
+        at com.google.firebase.auth.api.internal.zzen.zzc(Unknown Source:33)
+W/System.err:     at com.google.firebase.auth.api.internal.zzep.onFailure(Unknown Source:49)
+        at com.google.firebase.auth.api.internal.zzdx.dispatchTransaction(Unknown Source:18)
+        at com.google.android.gms.internal.firebase_auth.zza.onTransact(Unknown Source:13)
+W/System.err:     at android.os.Binder.execTransact(Binder.java:735)
+E/SpannableStringBuilder: SPAN_EXCLUSIVE_EXCLUSIVE spans cannot have a zero length
+I/chatty: uid=10251(br.usjt.rohan) identical 2 lines
+E/SpannableStringBuilder: SPAN_EXCLUSIVE_EXCLUSIVE spans cannot have a zero length
+I/AssistStructure: Flattened final assist data: 3096 bytes, containing 1 windows, 11 views
+E/SpannableStringBuilder: SPAN_EXCLUSIVE_EXCLUSIVE spans cannot have a zero length
+E/SpannableStringBuilder: SPAN_EXCLUSIVE_EXCLUSIVE spans cannot have a zero length
+E/SpannableStringBuilder: SPAN_EXCLUSIVE_EXCLUSIVE spans cannot have a zero length
+E/SpannableStringBuilder: SPAN_EXCLUSIVE_EXCLUSIVE spans cannot have a zero length
+W/BiChannelGoogleApi: [FirebaseAuth: ] getGoogleApiForMethod() returned Gms: com.google.firebase.auth.api.internal.zzak@65c1241
+D/FirebaseAuth: Notifying id token listeners about user ( wJfAk8oaa8aUb1yKYqZHDCOSUnT2 ).
+D/FirebaseAuth: Notifying auth state listeners about user ( wJfAk8oaa8aUb1yKYqZHDCOSUnT2 ).
+W/ActivityThread: handleWindowVisibility: no activity for token android.os.BinderProxy@ac580d0
+W/DynamiteModule: Local module descriptor class for providerinstaller not found.
+I/DynamiteModule: Considering local module providerinstaller:0 and remote module providerinstaller:0
+W/ProviderInstaller: Failed to load providerinstaller module: No acceptable module found. Local version is 0 and remote version is 0.
+W/br.usjt.rohan: Unknown chunk type '200'.
+I/br.usjt.rohan: The ClassLoaderContext is a special shared library.
+I/chatty: uid=10251(br.usjt.rohan) AsyncTask #1 identical 1 line
+I/br.usjt.rohan: The ClassLoaderContext is a special shared library.
+V/NativeCrypto: Registering com/google/android/gms/org/conscrypt/NativeCrypto's 288 native methods...
+W/br.usjt.rohan: Accessing hidden method Ljava/security/spec/ECParameterSpec;->getCurveName()Ljava/lang/String; (light greylist, reflection)
+W/br.usjt.rohan: Accessing hidden field Landroid/os/Trace;->TRACE_TAG_APP:J (light greylist, reflection)
+W/br.usjt.rohan: Accessing hidden method Landroid/os/Trace;->isTagEnabled(J)Z (light greylist, reflection)
+    Accessing hidden method Landroid/os/Trace;->asyncTraceBegin(JLjava/lang/String;I)V (light greylist, reflection)
+    Accessing hidden method Landroid/os/Trace;->asyncTraceEnd(JLjava/lang/String;I)V (light greylist, reflection)
+    Accessing hidden method Landroid/os/Trace;->traceCounter(JLjava/lang/String;I)V (light greylist, reflection)
+W/br.usjt.rohan: Accessing hidden field Ljava/nio/Buffer;->address:J (light greylist, reflection)
+D/NetworkSecurityConfig: No Network Security Config specified, using platform default
+I/ProviderInstaller: Installed default security provider GmsCore_OpenSSL
+W/br.usjt.rohan: Accessing hidden field Ljava/net/Socket;->impl:Ljava/net/SocketImpl; (light greylist, reflection)
+W/br.usjt.rohan: Accessing hidden method Ldalvik/system/CloseGuard;->get()Ldalvik/system/CloseGuard; (light greylist, linking)
+W/br.usjt.rohan: Accessing hidden method Ldalvik/system/CloseGuard;->open(Ljava/lang/String;)V (light greylist, linking)
+W/br.usjt.rohan: Accessing hidden field Ljava/io/FileDescriptor;->descriptor:I (light greylist, JNI)
+W/br.usjt.rohan: Accessing hidden method Ljava/security/spec/ECParameterSpec;->setCurveName(Ljava/lang/String;)V (light greylist, reflection)
+W/br.usjt.rohan: Accessing hidden method Ldalvik/system/BlockGuard;->getThreadPolicy()Ldalvik/system/BlockGuard$Policy; (light greylist, linking)
+    Accessing hidden method Ldalvik/system/BlockGuard$Policy;->onNetwork()V (light greylist, linking)
+W/br.usjt.rohan: Accessing hidden field Landroid/view/View;->mAccessibilityDelegate:Landroid/view/View$AccessibilityDelegate; (light greylist, reflection)
+W/ActivityThread: handleWindowVisibility: no activity for token android.os.BinderProxy@1b1ef7e
+D/AndroidRuntime: Shutting down VM
+E/AndroidRuntime: FATAL EXCEPTION: main
+    Process: br.usjt.rohan, PID: 23010
+    java.lang.RuntimeException: Unable to start activity ComponentInfo{br.usjt.rohan/br.usjt.rohan.ui.NewLocationActivity}: java.lang.NullPointerException: Attempt to invoke virtual method 'double android.location.Location.getLongitude()' on a null object reference
+        at android.app.ActivityThread.performLaunchActivity(ActivityThread.java:3122)
+        at android.app.ActivityThread.handleLaunchActivity(ActivityThread.java:3261)
+        at android.app.servertransaction.LaunchActivityItem.execute(LaunchActivityItem.java:78)
+        at android.app.servertransaction.TransactionExecutor.executeCallbacks(TransactionExecutor.java:108)
+        at android.app.servertransaction.TransactionExecutor.execute(TransactionExecutor.java:68)
+        at android.app.ActivityThread$H.handleMessage(ActivityThread.java:1977)
+        at android.os.Handler.dispatchMessage(Handler.java:106)
+        at android.os.Looper.loop(Looper.java:193)
+        at android.app.ActivityThread.main(ActivityThread.java:6923)
+        at java.lang.reflect.Method.invoke(Native Method)
+        at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:493)
+        at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:870)
+     Caused by: java.lang.NullPointerException: Attempt to invoke virtual method 'double android.location.Location.getLongitude()' on a null object reference
+        at br.usjt.rohan.ui.NewLocationActivity.onLocationChanged(NewLocationActivity.java:94)
+        at br.usjt.rohan.ui.NewLocationActivity.onCreate(NewLocationActivity.java:85)
+        at android.app.Activity.performCreate(Activity.java:7148)
+        at android.app.Activity.performCreate(Activity.java:7139)
+        at android.app.Instrumentation.callActivityOnCreate(Instrumentation.java:1293)
+        at android.app.ActivityThread.performLaunchActivity(ActivityThread.java:3102)
+        at android.app.ActivityThread.handleLaunchActivity(ActivityThread.java:3261) 
+        at android.app.servertransaction.LaunchActivityItem.execute(LaunchActivityItem.java:78) 
+        at android.app.servertransaction.TransactionExecutor.executeCallbacks(TransactionExecutor.java:108) 
+        at android.app.servertransaction.TransactionExecutor.execute(TransactionExecutor.java:68) 
+        at android.app.ActivityThread$H.handleMessage(ActivityThread.java:1977) 
+        at android.os.Handler.dispatchMessage(Handler.java:106) 
+        at android.os.Looper.loop(Looper.java:193) 
+        at android.app.ActivityThread.main(ActivityThread.java:6923) 
+        at java.lang.reflect.Method.invoke(Native Method) 
+        at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:493) 
+        at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:870) 
+I/Process: Sending signal. PID: 23010 SIG: 9
+Connected to process 24513 on device 'motorola-moto_g_6__plus-0048024262'.
+Capturing and displaying logcat messages from application. This behavior can be disabled in the "Logcat output" section of the "Debugger" settings page.
+I/FirebaseApp: Device unlocked: initializing all Firebase APIs for app [DEFAULT]
+W/DynamiteModule: Local module descriptor class for com.google.firebase.auth not found.
+I/FirebaseInitProvider: FirebaseApp initialization successful
+W/DynamiteModule: Local module descriptor class for com.google.firebase.auth not found.
+I/FirebaseAuth: [FirebaseAuth:] Loading module via FirebaseOptions.
+    [FirebaseAuth:] Preparing to create service connection to gms implementation
+W/br.usjt.rohan: Accessing hidden method Landroid/graphics/drawable/Drawable;->getOpticalInsets()Landroid/graphics/Insets; (light greylist, linking)
+    Accessing hidden field Landroid/graphics/Insets;->left:I (light greylist, linking)
+    Accessing hidden field Landroid/graphics/Insets;->right:I (light greylist, linking)
+    Accessing hidden field Landroid/graphics/Insets;->top:I (light greylist, linking)
+    Accessing hidden field Landroid/graphics/Insets;->bottom:I (light greylist, linking)
+W/Bundle: Key android:lastAutoFilledData expected Parcelable but value was a java.util.HashMap.  The default value <null> was returned.
+W/Bundle: Attempt to cast generated internal exception:
+    java.lang.ClassCastException: java.util.HashMap cannot be cast to android.os.Parcelable
+        at android.os.Bundle.getParcelable(Bundle.java:946)
+        at android.view.autofill.AutofillManager.onCreate(AutofillManager.java:560)
+        at android.app.Activity.onCreate(Activity.java:1048)
+        at androidx.core.app.ComponentActivity.onCreate(ComponentActivity.java:85)
+        at androidx.activity.ComponentActivity.onCreate(ComponentActivity.java:149)
+        at androidx.fragment.app.FragmentActivity.onCreate(FragmentActivity.java:313)
+        at androidx.appcompat.app.AppCompatActivity.onCreate(AppCompatActivity.java:115)
+        at br.usjt.rohan.ui.MainActivity.onCreate(MainActivity.java:24)
+        at android.app.Activity.performCreate(Activity.java:7148)
+        at android.app.Activity.performCreate(Activity.java:7139)
+        at android.app.Instrumentation.callActivityOnCreate(Instrumentation.java:1293)
+        at android.app.ActivityThread.performLaunchActivity(ActivityThread.java:3102)
+        at android.app.ActivityThread.handleLaunchActivity(ActivityThread.java:3261)
+        at android.app.servertransaction.LaunchActivityItem.execute(LaunchActivityItem.java:78)
+        at android.app.servertransaction.TransactionExecutor.executeCallbacks(TransactionExecutor.java:108)
+        at android.app.servertransaction.TransactionExecutor.execute(TransactionExecutor.java:68)
+        at android.app.ActivityThread$H.handleMessage(ActivityThread.java:1977)
+        at android.os.Handler.dispatchMessage(Handler.java:106)
+        at android.os.Looper.loop(Looper.java:193)
+        at android.app.ActivityThread.main(ActivityThread.java:6923)
+        at java.lang.reflect.Method.invoke(Native Method)
+        at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:493)
+        at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:870)
+W/br.usjt.rohan: Accessing hidden field Landroid/view/WindowInsets;->CONSUMED:Landroid/view/WindowInsets; (light greylist, reflection)
+W/br.usjt.rohan: Accessing hidden method Landroid/view/View;->getAccessibilityDelegate()Landroid/view/View$AccessibilityDelegate; (light greylist, linking)
+W/br.usjt.rohan: Accessing hidden method Landroid/view/View;->computeFitSystemWindows(Landroid/graphics/Rect;Landroid/graphics/Rect;)Z (light greylist, reflection)
+W/br.usjt.rohan: Accessing hidden method Landroid/view/ViewGroup;->makeOptionalFitsSystemWindows()V (light greylist, reflection)
+D/OpenGLRenderer: Skia GL Pipeline
+W/br.usjt.rohan: Accessing hidden method Landroid/graphics/Insets;->of(IIII)Landroid/graphics/Insets; (light greylist, linking)
+I/Adreno: QUALCOMM build                   : 9128d71, Ib33d3e8e13
+    Build Date                       : 11/02/18
+    OpenGL ES Shader Compiler Version: EV031.25.03.01
+    Local Branch                     : 
+    Remote Branch                    : 
+    Remote Branch                    : 
+    Reconstruct Branch               : 
+    Build Config                     : S L 6.0.7 AArch64
+I/Adreno: PFP: 0x005ff112, ME: 0x005ff066
+I/ConfigStore: android::hardware::configstore::V1_0::ISurfaceFlingerConfigs::hasWideColorDisplay retrieved: 0
+    android::hardware::configstore::V1_0::ISurfaceFlingerConfigs::hasHDRDisplay retrieved: 0
+I/OpenGLRenderer: Initialized EGL, version 1.4
+D/OpenGLRenderer: Swap behavior 2
+W/AutofillManager: setSaveUiState(-1855233060, true) called on existing session 1770170208; cancelling it
+I/AssistStructure: Flattened final assist data: 3200 bytes, containing 1 windows, 11 views
