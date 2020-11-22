@@ -15,7 +15,7 @@
         <!-- Customize your theme here. -->
         <item name="colorPrimary">#f5cb5c</item>
         <item name="colorPrimaryDark">#B59644</item>
-        <item name="colorAccent">#F9F9F9</item>
+        <item name="colorAccent">#232324</item>
         <item name="cardViewBackground">#333533</item>
         <item name="buttonColor">#f5cb5c</item>
         <item name="backgroundColor">#232324</item>
