@@ -27,7 +27,7 @@
         android:orientation="vertical"
         android:paddingHorizontal="10sp"
         android:paddingBottom="22sp"
-        android:clipToPadding="true"
+        android:clipToPadding="false"
         app:layout_constraintBottom_toTopOf="@+id/buttonNewLocation"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

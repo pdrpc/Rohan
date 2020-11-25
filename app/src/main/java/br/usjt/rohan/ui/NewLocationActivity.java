@@ -233,7 +233,7 @@ public class NewLocationActivity extends AppCompatActivity {
         String location_name = editTextLocationName.getEditableText().toString();
         String description = editTextLocationDesc.getEditableText().toString();
         String dt_created = dataCriada;
-        String coordinates = ("Lat: " + latitude + System.getProperty("line.separator") + "Long: " + longitude);
+        String coordinates = ("Lat: " + latitude + System.getProperty("line.separator") + "Lon: " + longitude);
 
         Map<String, Object> location = new HashMap<>();
         location.put(KEY_NAME, location_name);

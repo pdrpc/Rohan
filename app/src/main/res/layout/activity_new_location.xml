@@ -8,16 +8,16 @@
     android:layout_height="match_parent"
     tools:context=".ui.NewLocationActivity">
 
-
-    <TextView
-        android:id="@+id/newLocation"
-        android:text="@string/newLocation"
-        android:textAlignment="center"
-        android:textSize="40sp"
-        android:layout_width="match_parent"
+    <ImageView
+        android:id="@+id/erebor"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@+id/textViewLocationLat"
-        app:layout_constraintTop_toTopOf="parent"/>
+        android:src="@drawable/_a4834a987"
+        app:tint="?attr/colorText"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/textViewLocationLat"/>
 
     <TextView
         android:id="@+id/textViewLocationLat"

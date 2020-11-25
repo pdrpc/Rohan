@@ -1,5 +1,6 @@
 package br.usjt.rohan.ui;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
@@ -7,6 +8,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.graphics.drawable.DrawableCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.SnapHelper;
 
 import android.annotation.SuppressLint;
 import android.app.Application;
@@ -18,16 +20,20 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.animation.AccelerateDecelerateInterpolator;
 import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.Switch;
 import android.widget.Toast;
 
+import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
+import com.github.rubensousa.gravitysnaphelper.GravitySnapHelper;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
@@ -79,11 +85,40 @@ public class DashboardActivity extends AppCompatActivity implements FirestoreAda
         FirestoreRecyclerOptions<Location> options = new FirestoreRecyclerOptions.Builder<Location>()
                 .setQuery(query, Location.class)
                 .build();
-        adapter = new FirestoreAdapter(options, this);
+        adapter = new FirestoreAdapter(options, this, this);
 
-        locationList.setHasFixedSize(false);
-        locationList.setLayoutManager(new LinearLayoutManager(this));
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
+
+        locationList.setHasFixedSize(true);
+        locationList.setLayoutManager(linearLayoutManager);
         locationList.setAdapter(adapter);
+
+//        final SnapHelper snapHelper = new GravitySnapHelper(Gravity.TOP);
+//        snapHelper.attachToRecyclerView(locationList);
+//
+//        locationList.addOnScrollListener(new RecyclerView.OnScrollListener() {
+//            @Override
+//            public void onScrollStateChanged(@NonNull RecyclerView recyclerView, int newState) {
+//                super.onScrollStateChanged(recyclerView, newState);
+//                View view = snapHelper.findSnapView(linearLayoutManager);
+//                int pos = linearLayoutManager.findFirstCompletelyVisibleItemPosition();
+//                RecyclerView.ViewHolder holder = locationList.findViewHolderForAdapterPosition(pos);
+//                if(holder != null) {
+//                    CardView cardView = holder.itemView.findViewById(R.id.cardViewLista);
+//                    if (newState == RecyclerView.SCROLL_STATE_IDLE) {
+//                        cardView.animate().alpha(1).scaleY(1).setDuration(550).setInterpolator(new AccelerateDecelerateInterpolator()).start();
+//                    } else {
+//                        cardView.animate().alpha(0).scaleY(0).setDuration(550).setInterpolator(new AccelerateDecelerateInterpolator()).start();
+//                    }
+//                }
+//
+//            }
+//
+//            @Override
+//            public void onScrolled(@NonNull RecyclerView recyclerView, int dx, int dy) {
+//                super.onScrolled(recyclerView, dx, dy);
+//            }
+//        });
 
         CustomIntent.customType(DashboardActivity.this, "fadein-to-fadeout");
 
