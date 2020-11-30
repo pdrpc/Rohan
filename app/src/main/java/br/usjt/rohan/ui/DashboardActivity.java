@@ -179,7 +179,6 @@ public class DashboardActivity extends AppCompatActivity implements FirestoreAda
 
     @Override
     public void onItemLongClick(Location snapshot, int position) {
-        Log.d("Long Click", "got the looooong click");
         AlertDialog.Builder builder = new AlertDialog.Builder(DashboardActivity.this);
         builder.setTitle("Deletar")
                 .setMessage("Tem certeza que deseja deletar " + snapshot.getLocation_name() + "?")
